@@ -1,0 +1,14 @@
+import React from "react";
+import {Text, TouchableOpacity, View} from "react-native";
+import {styles} from "../../style/MonStyle";
+
+const Detonator = (props) => {
+    return(
+        <View>
+            <TouchableOpacity
+            onPress={() => {console.log(props.bombe.state.modules);console.log(props.bombe.state.wrongAnswer)}} style={styles.roundButton}><Text style={styles.rondButtonText}>Désamorcer</Text>
+            </TouchableOpacity>
+        </View>
+    );}
+
+export default Detonator
