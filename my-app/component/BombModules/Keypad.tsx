@@ -1,10 +1,14 @@
-import React, {Component} from "react";
-import {ImageBackground, Pressable, Text, ToastAndroid, View} from "react-native";
-import {height, styles, width} from "../../style/MonStyle";
-import Svg, {Line, Polyline, Rect, Text as SVGText} from "react-native-svg";
-import { TouchableOpacity } from 'react-native'
+import React from "react";
+import { Image, ToastAndroid, View } from "react-native";
+import { styles } from "../../style/MonStyle";
+import Svg, { Rect } from "react-native-svg";
+import { TouchableOpacity } from 'react-native';
+import monImg from "../../assets/cl.png";
 
 const KeyPad = (props) => {
+    const showToast = () => {
+        ToastAndroid.show("cliqueuuu !", ToastAndroid.SHORT);
+    };
     console.log(props.bombe.state.modules);
     console.log(props.bombe.state.wrongAnswer);
     return (
@@ -18,15 +22,17 @@ const KeyPad = (props) => {
                     height="90%"
                     fill="rgb(125,125,125)"
                     strokeWidth="3%"
-                    stroke = "rgb(0,0,0)"
+                    stroke="rgb(0,0,0)"
                 />
+
             </Svg>
-            {/*<TouchableOpacity activeOpacity={0.5}>*/}
-            {/*    <ImageBackground*/}
-            {/*        source={require("./cl.PNG")}*/}
-            {/*        //style possible*/}
-            {/*    />*/}
-            {/*</TouchableOpacity>*/}
+            <TouchableOpacity activeOpacity={0.5} style={{ width: 10, height: 10 }}>
+                <Image source={monImg} />
+            </TouchableOpacity>
+            {/* <Pressable style={styles.pressed} onPress={() => showToast()}>
+                <Text>Oui bonsoir l'argent </Text>
+                <Image resizeMode="contain" source={monImg} />
+            </Pressable> */}
         </View>
     );
 }

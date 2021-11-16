@@ -1,7 +1,6 @@
 import React from 'react'
-import {height, styles, width} from "../../style/MonStyle";
-import Svg, {Rect, Text as SVGText} from "react-native-svg";
-import {Text, TextComponent, ToastAndroid, View} from "react-native";
+import Svg, { Rect, Text as SVGText } from "react-native-svg";
+import { View } from "react-native";
 
 const CountDownComponent = (props) => {
     return (
@@ -20,10 +19,10 @@ const CountDownComponent = (props) => {
                 />
                 {/*Text Compteur*/}
                 <SVGText x="37%"
-                         y="16%"
-                         fontFamily="Verdana"
-                         fontSize="20"
-                         fill="red"
+                    y="16%"
+                    fontFamily="Verdana"
+                    fontSize="20"
+                    fill="red"
                 >{props.bombe.CountDown()}</SVGText>
             </Svg>
         </View>

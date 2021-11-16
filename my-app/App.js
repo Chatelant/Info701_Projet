@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 
 /* Components import */
 import Bombe from "./component/Bombe";
@@ -13,9 +13,9 @@ import RoleSelection from "./component/RoleSelection";
 const Stack = createNativeStackNavigator();
 
 /* Home Screen */
-function HomeScreen({navigation}) {
+function HomeScreen({ navigation }) {
     return (
-        <Home navigation={navigation}/>
+        <Home navigation={navigation} />
     );
 }
 
@@ -31,10 +31,10 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="RoleSelection" component={RoleSelection} options={{headerShown: false}}/>
-                <Stack.Screen name="Lobby" component={Connection} options={{headerShown: false}}/>
-                <Stack.Screen name="Bombe" component={Bombe} options={{headerShown: false}}/>
+                <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="RoleSelection" component={RoleSelection} options={{ headerShown: false }} />
+                <Stack.Screen name="Lobby" component={Connection} options={{ headerShown: false }} />
+                <Stack.Screen name="Bombe" component={Bombe} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
