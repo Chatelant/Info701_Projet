@@ -49,6 +49,7 @@ const Connection = ({navigation, route}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.pressedText}>MatchMaking</Text>
+            <Pressable onPress={()=>navigation.navigate('InformatorLayout')} style={styles.pressed}><Text style={styles.pressedText}>Ecran informateur</Text></Pressable>
             <Pressable onPress={()=>socket.emit("Ping")} style={styles.pressed}><Text style={styles.pressedText}>Test Serveur</Text></Pressable>
             <Pressable onPress={()=>navigation.navigate('Bombe')} style={styles.pressed}><Text style={styles.pressedText}>Test Bombe</Text></Pressable>
         </View>

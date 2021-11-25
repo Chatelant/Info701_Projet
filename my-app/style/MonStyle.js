@@ -43,6 +43,20 @@ export const styles = StyleSheet.create({
         fontSize : 30,
     },
 
+    pressedMenu: {
+        backgroundColor:'rgba(83,167,251,0.98)',
+        alignItems : "center",
+        textAlign : "center",
+        justifyContent : "center",
+        padding : 5,
+        margin : 2,
+    },
+
+    pressedTextMenu:{
+        color: '#AAAAAA',
+        fontSize : 15,
+    },
+
     // Partie Modules
     moduleView:{
         width : width / 2 - 10,

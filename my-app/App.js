@@ -8,6 +8,7 @@ import Bombe from "./component/Bombe";
 import Connection from "./component/Connection";
 import Home from "./component/Home";
 import RoleSelection from "./component/RoleSelection";
+import informatorLayout from "./component/informator/informatorLayout"
 
 /* Création de la pile des vue */
 const Stack = createNativeStackNavigator();
@@ -19,13 +20,6 @@ function HomeScreen({ navigation }) {
     );
 }
 
-/* Lobby Screen */
-// function Connexion({navigation}) {
-//     return (
-//         <Connection navigation={navigation}/>
-//     );
-// }
-
 /* Pile de vue */
 export default function App() {
     return (
@@ -35,6 +29,8 @@ export default function App() {
                 <Stack.Screen name="RoleSelection" component={RoleSelection} options={{ headerShown: false }} />
                 <Stack.Screen name="Lobby" component={Connection} options={{ headerShown: false }} />
                 <Stack.Screen name="Bombe" component={Bombe} options={{ headerShown: false }} />
+                {/* Coté informateur */}
+                <Stack.Screen name="InformatorLayout" component={informatorLayout} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
