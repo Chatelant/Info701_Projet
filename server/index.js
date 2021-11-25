@@ -21,9 +21,9 @@ io.on("connection", (socket) => {
     });
 
     socket.on("MatchMaking", (data) =>{
-        console.log(data.ip);
+        console.log(data.id);
         console.log(data.role);
-        // matchmaking();
+        matchmaking();
     })
 
     socket.on("disconnect", () => {

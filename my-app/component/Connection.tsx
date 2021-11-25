@@ -6,6 +6,7 @@ import publicIP from 'react-native-public-ip';
 
 let ipv4 = null;
 let role = null;
+let socketId: string;
 
 // Gestion de la connexion a la socket
 publicIP()
@@ -17,22 +18,31 @@ publicIP()
     });
 
 const Connection = ({navigation, route}) => {
+
+    // Root
     const socket = io('http://192.168.1.20:3000'); // Maison fix
     // const socket = io('http://192.168.1.15:3000'); // Maison portable
     // const socket = io('http://127.0.0.1:80');
 
+    // Var contenantr l'id de la socket
+    
+    
+
     console.log("---------------\nDevice connected : ");
-    console.log("ip :" + ipv4 + "\nrole : " + route.params.role);
+    console.log("id :" + socketId + "\nrole : " + route.params.role);
     console.log("---------------");
 
     socket.on("connect", () => {
         console.log("Connect");
-        socket.emit("MatchMaking", {ip: ipv4, role: route.params.role});
+        socketId = socket.id;
+        console.log(socketId);
+        socket.emit("MatchMaking", {id: socketId, role: route.params.role});
     });
 
     socket.on("disconnect", () => {
         console.log("Disconnect");
         ToastAndroid.show("Reconnexion...",ToastAndroid.SHORT)
+
     });
 
 
