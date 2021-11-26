@@ -5,7 +5,7 @@ export const {height, width} = Dimensions.get("window");
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'rgba(51,51,51,0.2)',
+        backgroundColor: 'rgba(224,234,245,96)',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -14,13 +14,12 @@ export const styles = StyleSheet.create({
         fontSize : 50,
         textAlign : "center",
         textAlignVertical : "center",
-        // flex : 5,
     },
     text: {
         color : '#ffffff'
     },
     pressedHome: {
-        backgroundColor:'rgba(83,167,251,0.98)',
+        backgroundColor:'rgba(165,173,181,71)',
         alignItems : "center",
         alignContent : "center",
         textAlign : "center",
@@ -31,7 +30,7 @@ export const styles = StyleSheet.create({
         width : width,
     },
     pressed: {
-        backgroundColor:'rgba(83,167,251,0.98)',
+        backgroundColor:'rgba(165,173,181,71)',
         alignItems : "center",
         textAlign : "center",
         justifyContent : "center",
@@ -41,20 +40,6 @@ export const styles = StyleSheet.create({
     pressedText : {
         color : '#ffffff',
         fontSize : 30,
-    },
-
-    pressedMenu: {
-        backgroundColor:'rgba(83,167,251,0.98)',
-        alignItems : "center",
-        textAlign : "center",
-        justifyContent : "center",
-        padding : 5,
-        margin : 2,
-    },
-
-    pressedTextMenu:{
-        color: '#AAAAAA',
-        fontSize : 15,
     },
 
     // Partie Modules
@@ -79,5 +64,35 @@ export const styles = StyleSheet.create({
         color : '#ffffff',
         fontSize : 25,
         fontWeight : "bold",
+    },
+
+    pressedMenu: {
+        backgroundColor:'rgba(107,112,117,46)',
+        // width:'100%',
+        alignItems : "center",
+        textAlign : "center",
+        justifyContent : "center",
+        padding : "15%",
+        margin : 2,
+    },
+
+    pressedTextMenu:{
+        color: '#AAAAAA',
+        fontSize : 15,
+    },
+
+    containerMenu: {
+        backgroundColor: 'rgba(51,51,51,0.2)',
+        alignItems: 'flex-start',
+        // justifyContent: 'center',
+        flexDirection: 'row',
+    },
+
+    containerInformatorMenu:{
+        backgroundColor: 'rgba(51,51,51,0.2)',
+        flexDirection: 'column',
+        width: '20%',
+        justifyContent: 'center',
+        
     }
 });

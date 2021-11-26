@@ -9,6 +9,7 @@ import Connection from "./component/Connection";
 import Home from "./component/Home";
 import RoleSelection from "./component/RoleSelection";
 import informatorLayout from "./component/informator/informatorLayout"
+import informatorWireLayout from "./component/informator/informatorWireLayout"
 
 /* Création de la pile des vue */
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,7 @@ export default function App() {
                 <Stack.Screen name="Bombe" component={Bombe} options={{ headerShown: false }} />
                 {/* Coté informateur */}
                 <Stack.Screen name="InformatorLayout" component={informatorLayout} options={{ headerShown: false }} />
+                <Stack.Screen name="InformatorWireLayout" component={informatorWireLayout} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
