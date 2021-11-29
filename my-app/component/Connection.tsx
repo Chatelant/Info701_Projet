@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { io } from "socket.io-client";
 import { Pressable, Text, ToastAndroid, View } from "react-native";
 import { styles } from "../style/MonStyle";
@@ -6,7 +6,12 @@ import publicIP from 'react-native-public-ip';
 
 let ipv4 = null;
 let role = null;
+// Socket d'écoute
+let socket;
 let socketId: string;
+// Socket d'emission
+// const [mateSocketId, setMateSocketId] = useState("");
+let roomId : string;
 
 // Gestion de la connexion a la socket
 publicIP()
@@ -20,26 +25,47 @@ publicIP()
 const Connection = ({ navigation, route }) => {
 
     // Root
-    const socket = io('http://192.168.1.20:3000'); // Maison fix
+    socket = io('http://192.168.1.20:3000'); // Maison fix
     // const socket = io('http://192.168.1.15:3000'); // Maison portable
     // const socket = io('http://127.0.0.1:80');
 
-    console.log("---------------\nDevice connected : ");
-    console.log("id :" + socketId + "\nrole : " + route.params.role);
-    console.log("---------------");
-    
+    // const [mateSocketId, setMateSocketId] = useState("");
+
+    // Connection
     socket.on("connect", () => {
-        console.log("Connect");
         socketId = socket.id;
-        console.log(socketId);
+        console.log("Connexion de : " + socketId);
         socket.emit("MatchMaking", { id: socketId, role: route.params.role });
     });
+
 
     socket.on("disconnect", () => {
         console.log("Disconnect");
         ToastAndroid.show("Reconnexion...", ToastAndroid.SHORT)
     });
 
+    // MatchMaking
+    socket.on('pingBro', () =>{
+        console.log("J'ai reçu un truc de mon poto !");
+    });
+
+    socket.on('Matchmaking_recv', (data) =>{
+        roomId = data.roomId;
+        console.log(socketId + " connecté à room d'id : " + roomId);
+        socket.emit("pingBro");
+    });
+
+
+
+    // Vocal
+    socket.on('voice received', function (msg) {
+        var audio = document.querySelector('audio');
+        audio.src = window.URL.createObjectURL(msg);
+    });
+
+    socket.on('voice sent', function(msg){
+        socket.emit('voice received', msg);
+    });
 
     return (
         <View style={styles.container}>
