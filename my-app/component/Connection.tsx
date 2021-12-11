@@ -42,12 +42,7 @@ const Connection = ({ navigation, route }) => {
 
     socket.on("disconnect", () => {
         console.log("Disconnect");
-        ToastAndroid.show("Reconnexion...", ToastAndroid.SHORT)
-    
-    
-    
-    
-    
+        ToastAndroid.show("Reconnexion...", ToastAndroid.SHORT)    
     });
 
 
