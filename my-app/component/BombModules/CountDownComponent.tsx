@@ -23,7 +23,14 @@ const CountDownComponent = (props) => {
                     fontFamily="Verdana"
                     fontSize="20"
                     fill="red"
-                >{props.bombe.CountDown()}</SVGText>
+                >{props.bombe.CountDown()}
+                </SVGText>
+                <SVGText x="25%"
+                    y="40%"
+                    fontFamily="Verdana"
+                    fontSize="20"
+                    fill="red"
+                >{"Erreurs : " + props.bombe.state.wrongAnswer}</SVGText>
             </Svg>
         </View>
     );

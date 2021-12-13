@@ -1,49 +1,62 @@
 import React from "react";
-import { Image, ToastAndroid, View, TouchableOpacity } from "react-native";
+import { ToastAndroid, View, ImageBackground, TouchableHighlight } from "react-native";
 import { styles } from "../../style/MonStyle";
-import Svg, { Rect } from "react-native-svg";
-import monImg from "../../assets/cl.png";
 
 const KeyPad = (props) => {
     const showToast = () => {
         ToastAndroid.show("cliqueuuu !", ToastAndroid.SHORT);
     };
-    console.log(props.bombe.state.modules);
-    console.log(props.bombe.state.wrongAnswer);
+
+    let answer = { "1": 0, "2": 0, "3": 0, "4": 0 };
+    let moduleValide = false;
+    let nbPressed = 1;
+
+    function setAnswer(numTouche) {
+        answer[numTouche] = nbPressed;
+        nbPressed++;
+        checkVictory();
+    }
+    function checkVictory() {
+        if (nbPressed === 5 && moduleValide === false) {
+            if (answer["1"] === 3 && answer["2"] === 2 && answer["3"] === 1 && answer["4"] === 4) {
+                ToastAndroid.show("Module validé ! ", ToastAndroid.SHORT);
+                props.bombe.answer('M1');
+            } else {
+                props.bombe.incrWrongAnswer();
+                answer = { "1": 0, "2": 0, "3": 0, "4": 0 };
+                nbPressed = 1;
+            }
+        }
+    }
+
     return (
-        <View style={styles.container}>
+        <View style={styles.containerMenu}>
             <View style={styles.topView}>
-                <TouchableOpacity style={{backgroundColor:"red"}}
-                    // activeOpacity={0.5} 
-                    onPress={ToastAndroid.show("Oui", ToastAndroid.SHORT)}>
-                    {/* <Image source={monImg} /> */}
-                </TouchableOpacity>
+                <View style={styles.keypadRows}>
+                    <TouchableHighlight style={[styles.touchableOpacityTouchImg]}
+                        onPress={() => setAnswer("1")}>
+                        <ImageBackground source={require('../../assets/n.png')} style={[styles.touchImg]}>
+                        </ImageBackground>
+                    </TouchableHighlight>
+                    <TouchableHighlight style={[styles.touchableOpacityTouchImg]}
+                        onPress={() => setAnswer("2")}>
+                        <ImageBackground source={require('../../assets/cl.png')} style={[styles.touchImg]}>
+                        </ImageBackground>
+                    </TouchableHighlight>
                 </View>
-
-            <View style={styles.bottomView}>
-                <Svg width="100%" height="100%">
-
-
-                    {/* <Pressable style={styles.pressed} onPress={() => showToast()}>
-                    <Text>Oui bonsoir l'argent </Text>
-                    <Image resizeMode="contain" source={monImg} />
-                    </Pressable> */}
-
-                    {/* Rectangle haut */}
-                    <Rect
-                        x="5%"
-                        y="5%"
-                        width="90%"
-                        height="90%"
-                        fill="rgb(125,125,125)"
-                        strokeWidth="3%"
-                        stroke="rgb(0,0,0)"
-                    />
-                </Svg>
+                <View style={styles.keypadRows}>
+                    <TouchableHighlight style={[styles.touchableOpacityTouchImg]}
+                        onPress={() => setAnswer("3")}>
+                        <ImageBackground source={require('../../assets/q.png')} style={[styles.touchImg]}>
+                        </ImageBackground>
+                    </TouchableHighlight>
+                    <TouchableHighlight style={[styles.touchableOpacityTouchImg]}
+                        onPress={() => setAnswer("4")}>
+                        <ImageBackground source={require('../../assets/interrog-reserved.png')} style={[styles.touchImg]}>
+                        </ImageBackground>
+                    </TouchableHighlight>
+                </View>
             </View>
-
-
-
         </View>
     );
 }

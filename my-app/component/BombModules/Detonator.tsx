@@ -6,10 +6,9 @@ const Detonator = (props) => {
     return (
         <View>
             <TouchableOpacity
-                onPress={() => { console.log(props.bombe.state.modules); console.log(props.bombe.state.wrongAnswer) }} style={styles.roundButton}><Text style={styles.rondButtonText}>Désamorcer</Text>
+                onPress={() => {props.bombe.answer('M6'), console.log(props.bombe.state.modules); console.log(props.bombe.state.wrongAnswer)}} style={styles.roundButton}><Text style={styles.rondButtonText}>Désamorcer</Text>
             </TouchableOpacity>
         </View>
     );
 }
-
-export default Detonator
+export default Detonator;

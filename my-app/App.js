@@ -12,6 +12,8 @@ import informatorLayout from "./component/informator/informatorLayout"
 import informatorWireLayout from "./component/informator/informatorWireLayout"
 import informatorDesamorcage from "./component/informator/informatorDesamorcage"
 import informatorKeypad from "./component/informator/informatorKeypad"
+import informatorCompteur from "./component/informator/informatorCompteur"
+import informatorSerialNumber from "./component/informator/informatorSerialNumber"
 
 /* Création de la pile des vue */
 const Stack = createNativeStackNavigator();
@@ -28,6 +30,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
+                {/* Navigation entre les menus */}
                 <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="RoleSelection" component={RoleSelection} options={{ headerShown: false }} />
                 <Stack.Screen name="Lobby" component={Connection} options={{ headerShown: false }} />
@@ -36,7 +39,9 @@ export default function App() {
                 <Stack.Screen name="InformatorLayout" component={informatorLayout} options={{ headerShown: false }} />
                 <Stack.Screen name="InformatorWireLayout" component={informatorWireLayout} options={{ headerShown: false }} />
                 <Stack.Screen name="InformatorDesamorcageLayout" component={informatorDesamorcage} options={{ headerShown: false }} />
-                <Stack.Screen name="informatorKeypadLayout" component={informatorKeypad} options={{ headerShown: false }} />
+                <Stack.Screen name="InformatorKeypadLayout" component={informatorKeypad} options={{ headerShown: false }} />
+                <Stack.Screen name="InformatorCompteurLayout" component={informatorCompteur} options={{ headerShown: false }} />
+                <Stack.Screen name="InformatorSerialNumber" component={informatorSerialNumber} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );

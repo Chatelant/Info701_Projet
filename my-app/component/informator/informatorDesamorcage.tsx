@@ -8,7 +8,10 @@ const informatorDesamorcage = ({ navigation }) => {
         <View style={styles.containerMenu}>
           {/* Side Menu */}
           <InformatorMenu navigation={navigation}/>
-          <Text style={{textAlign : 'center', marginTop :'22%', marginRight :'25%', marginLeft : '5%'}}>Désamorcez la bombe lorsque vous aurez désamorcé tous les modules. Dans le cas contraire vous perdez la partie</Text>
+          <Text style={{textAlign : 'center', marginTop :'15%', marginRight :'25%', marginLeft : '5%', fontSize :20}}>
+            Désamorcez la bombe lorsque vous aurez désamorcé tous les modules. 
+            Dans le cas ou vous désamorcez la bombe les modules, vous perdez la partie.
+            </Text>
 
         </View>
         
