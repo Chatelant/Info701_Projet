@@ -7,7 +7,7 @@ const Home = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.title}>Keep Talking And Nobobdy Explode</Text>
             <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedHome}><Text style={styles.pressedText}>Play</Text></Pressable>
-            <Pressable onPress={() => navigation.navigate('Lobby', {role : 'informateur'})} style={styles.pressedHome}><Text style={styles.pressedText}>test vocal</Text></Pressable>
+            {/* <Pressable onPress={() => navigation.navigate('Lobby', {role : 'informateur'})} style={styles.pressedHome}><Text style={styles.pressedText}>test vocal</Text></Pressable> */}
         </View>
     )
 }

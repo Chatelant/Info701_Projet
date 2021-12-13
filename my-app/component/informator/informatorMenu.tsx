@@ -10,7 +10,7 @@ const informatorMenu = ({navigation}) => {
             <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Play</Text></Pressable>
             <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Play</Text></Pressable>
             <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Play</Text></Pressable>
-            <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Play</Text></Pressable>
+            <Pressable onPress={() => navigation.navigate('InformatorDesamorcageLayout')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Desamorçage</Text></Pressable>
         </View>
     )
 }

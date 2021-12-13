@@ -94,5 +94,18 @@ export const styles = StyleSheet.create({
         width: '20%',
         justifyContent: 'center',
         
-    }
+    },
+
+    topView: {
+        position: 'relative',
+        width: 200,
+        height: "auto",
+    },
+    bottomView: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: width,
+        height: height,
+    },
 });
