@@ -9,7 +9,7 @@ const informatorMenu = ({ navigation }) => {
             <Pressable onPress={() => navigation.navigate('InformatorCompteurLayout')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Compteur</Text></Pressable>
             <Pressable onPress={() => navigation.navigate('InformatorWireLayout')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Wire</Text></Pressable>
             <Pressable onPress={() => navigation.navigate('InformatorSerialNumber')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>N°Serie</Text></Pressable>
-            <Pressable onPress={() => navigation.navigate('RoleSelection')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Mod</Text></Pressable>
+            <Pressable onPress={() => navigation.navigate('InformatorWord')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Mot</Text></Pressable>
             <Pressable onPress={() => navigation.navigate('InformatorDesamorcageLayout')} style={styles.pressedMenu}><Text style={styles.pressedTextMenu}>Desamorçage</Text></Pressable>
         </View>
     )

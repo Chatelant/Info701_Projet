@@ -6,6 +6,7 @@ import Detonator from "./BombModules/Detonator";
 import WireModule from "./BombModules/WireModule";
 import KeyPad from "./BombModules/Keypad";
 import SerialNumber from "./BombModules/SerialNumber";
+import Word from "./BombModules/Word";
 
 /// Contient le jeu et affiche les modules.
 /// Les modules intéragissent avec le jeu pour indiquer si ils ont été correctement validé
@@ -85,7 +86,7 @@ class Bombe extends Component {
                     {/*Module 4*/}
                     <View style={styles.moduleView}><SerialNumber bombe={this} /></View>
                     {/*Module 5*/}
-                    <View style={styles.moduleView} />
+                    <View style={styles.moduleView}><Word bombe={this} /></View>
                     {/*Module 6*/}
                     <View style={styles.moduleView}><Detonator bombe={this} /></View>
                 </View>

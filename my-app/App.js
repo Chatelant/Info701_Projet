@@ -14,6 +14,7 @@ import informatorDesamorcage from "./component/informator/informatorDesamorcage"
 import informatorKeypad from "./component/informator/informatorKeypad"
 import informatorCompteur from "./component/informator/informatorCompteur"
 import informatorSerialNumber from "./component/informator/informatorSerialNumber"
+import informatorWord from "./component/informator/informatorWord"
 
 /* Création de la pile des vue */
 const Stack = createNativeStackNavigator();
@@ -42,6 +43,7 @@ export default function App() {
                 <Stack.Screen name="InformatorKeypadLayout" component={informatorKeypad} options={{ headerShown: false }} />
                 <Stack.Screen name="InformatorCompteurLayout" component={informatorCompteur} options={{ headerShown: false }} />
                 <Stack.Screen name="InformatorSerialNumber" component={informatorSerialNumber} options={{ headerShown: false }} />
+                <Stack.Screen name="InformatorWord" component={informatorWord} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
