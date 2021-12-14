@@ -1,24 +1,24 @@
-- [1. Info701_Projet](#1-info701_projet)
-- [2. Architecture](#2-architecture)
-- [3. Choix technologiques](#3-choix-technologiques)
-- [4. Fonctionnement de l'app](#4-fonctionnement-de-lapp)
-- [5. Installation](#5-installation)
-- [6. Diffucultés rencontrées](#6-diffucultés-rencontrées)
+- [Info701_Projet](#info701_projet)
+- [1. Architecture](#1-architecture)
+- [2. Choix technologiques](#2-choix-technologiques)
+- [3. Fonctionnement de l'app](#3-fonctionnement-de-lapp)
+- [4. Installation](#4-installation)
+- [5. Diffucultés rencontrées](#5-diffucultés-rencontrées)
 
-# 1. Info701_Projet
+# Info701_Projet
 Keep Talking And Nobody Explode
 Preuve de concept du jeu suivant.
 + version compilé
 
-# 2. Architecture
+# 1. Architecture
  
  
-# 3. Choix technologiques
+# 2. Choix technologiques
 les choix et les 
 
-# 4. Fonctionnement de l'app 
+# 3. Fonctionnement de l'app 
 
-# 5. Installation
+# 4. Installation
 
 Cloner le repo
 
@@ -34,7 +34,7 @@ Cloner le repo
     Lancer avec expo :
         expo start
 
-# 6. Diffucultés rencontrées
+# 5. Diffucultés rencontrées
 
 Ajout du vocal (socket + Voice , webRTC, ...)
 Construire un affichage satisfaisant

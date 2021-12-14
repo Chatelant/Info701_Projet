@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 import Svg, { Text as SVGText } from "react-native-svg";
-import { styles } from "../../style/MonStyle";
 
-/// Module Informatif
+/// Module Informatif affichant le numero de série
 // Pas de vérification de validité nécéssaire, 
 // on envoie donc une réponse positive au jeu.
 const SerialNumber = (props) => {

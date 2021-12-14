@@ -3,10 +3,13 @@ import { View, ToastAndroid } from "react-native";
 import { styles } from "../../style/MonStyle";
 import Svg, { Line, Rect } from "react-native-svg";
 
+/// Module affichant les fils
+// Ce dernier est en relation avec le module affichant le numéro de série
 const WireModule = (props) => {
 
     let moduleValide = false;   // Indique si le module a été validé
 
+    // Appelé à chaque touche d'un fil
     function setAnswer(color) {
         if (color === "red" && moduleValide === false) {
             props.bombe.answer('M3')

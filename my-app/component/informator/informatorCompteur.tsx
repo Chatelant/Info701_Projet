@@ -3,6 +3,7 @@ import React from "react";
 import { styles } from "../../style/MonStyle"
 import InformatorMenu from "./informatorMenu"
 
+// Affichage Informateur : Module Compteur
 const informatorCompteur = ({ navigation }) => {
     return (
         <View style={styles.containerMenu}>

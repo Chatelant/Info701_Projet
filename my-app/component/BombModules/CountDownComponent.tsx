@@ -2,6 +2,7 @@ import React from 'react'
 import Svg, { Rect, Text as SVGText } from "react-native-svg";
 import { View } from "react-native";
 
+/// Module affichant le compteur du jeu ainsi que le nombre d'erreurs commises
 const CountDownComponent = (props) => {
     return (
         <View>
@@ -35,6 +36,5 @@ const CountDownComponent = (props) => {
         </View>
     );
 }
-
 export default CountDownComponent;
 

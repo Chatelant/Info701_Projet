@@ -1,11 +1,9 @@
-import { Pressable, Text, View, StyleSheet } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 import { styles } from "../../style/MonStyle"
 import InformatorMenu from "./informatorMenu"
 
-/// Module informatif
-// Ne nécéssite pas de vérifications
-
+// Affichage Informateur : Module des fils
 const wireInformator = ({ navigation }) => {
   return (
     <View style={styles.containerMenu}>
@@ -31,9 +29,7 @@ const wireInformator = ({ navigation }) => {
         Sinon, s'il n'y a pas de fils noirs, coupez le deuxième fil.
         Sinon, coupez le premier fil.
       </Text>
-
     </View>
-
   )
 }
 export default wireInformator;

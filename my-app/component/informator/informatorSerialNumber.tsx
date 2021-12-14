@@ -3,6 +3,7 @@ import React from "react";
 import { styles } from "../../style/MonStyle"
 import InformatorMenu from "./informatorMenu"
 
+// Affichage Informateur : Module Numero de serie
 const informatorSerialNumber = ({ navigation }) => {
     return (
         <View style={styles.containerMenu}>

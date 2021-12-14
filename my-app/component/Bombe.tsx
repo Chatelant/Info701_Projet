@@ -9,26 +9,31 @@ import SerialNumber from "./BombModules/SerialNumber";
 import Word from "./BombModules/Word";
 
 /// Contient le jeu et affiche les modules.
-/// Les modules intéragissent avec le jeu pour indiquer si ils ont été correctement validé
-/// Dans le cas contraire, ils préviennent le jeu d'une erreur, ce dernier incrémente le nombre d'erreurs
+/// Les modules intéragissent avec le jeu pour indiquer si ils ont été correctement validé (answer)
+/// Dans le cas contraire, ils préviennent le jeu d'une erreur, ce dernier incrémente le nombre d'erreurs (incrWrongAnswer)
 
 class Bombe extends Component {
-    private wrongAnswerAllowed = 3;
+    private wrongAnswerAllowed = 3; // Nombre d'erreurs max alloués à l'utilisateurs
+
     state = {
-        countDown: 180,    // Entiers correspondant au temps accordé, transfomé en str pour l'affichage ensuite.
+        countDown: 180,     // Entiers correspondant au temps accordé, transfomé en str pour l'affichage ensuite.
         wrongAnswer: 0,     // Nombre d'erreurs courrante
-        modules: { 'M1': false, 'M2': true, 'M3': false, 'M4': false, 'M5': true, 'M6': false }, //TODO enlever le true du M5
+        modules: { 'M1': false, 'M2': true, 'M3': false, 'M4': false, 'M5': false, 'M6': false }, // Indique pour chaque module s'il est validé ou non
     }
+
+    // Fonction validant le module donné en paramètre
     answer(moduleName) {
         this.state.modules[moduleName] = true;
         this.checkVictory();
     }
 
+    // Fonction incrémentant le nombre d'erreur commise par le joueur
     incrWrongAnswer() {
         this.state.wrongAnswer++;
         this.checkVictory();
     }
 
+    // Fonction qui vérifie si le jeu est terminé
     checkVictory() {
         if (this.state.modules['M1'] === true &&
             this.state.modules['M2'] === true &&
@@ -43,6 +48,7 @@ class Bombe extends Component {
         }
     }
 
+    // Fonction qui gère le Countdown du jeu
     CountDown() {
         const [counter, setCounter] = React.useState(this.state.countDown);
 
@@ -66,7 +72,7 @@ class Bombe extends Component {
     render() {
 
         return (
-
+            // Affichage des 6 modules
             <View style={{ flexDirection: "column", width: width, height: height, justifyContent: "center", }}>
                 <StatusBar
                     animated={false}

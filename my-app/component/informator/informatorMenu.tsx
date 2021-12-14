@@ -2,6 +2,8 @@ import { Pressable, Text, View } from "react-native";
 import React from "react";
 import { styles } from "../../style/MonStyle"
 
+/// Menu affiché sur la gauche de l'écran de la vue informateur
+// Permet de naviguer entre les différents écrans d'information
 const informatorMenu = ({ navigation }) => {
     return (
         <View style={styles.containerInformatorMenu}>

@@ -34,17 +34,13 @@ io.on("connection", (socket) => {
         debutPartie();
     })
 
-
-
-    function debutPartie(){
-        if(desamorceur != undefined && informateur != undefined){
+    function debutPartie() {
+        if (desamorceur != undefined && informateur != undefined) {
             io.emit("debutPartie");
-        }else{
+        } else {
             console.log("Il manque un joueur pour lancer la partie");
         }
     }
-
-
 
     // Gestion de salles 
 
@@ -85,8 +81,3 @@ io.on("connection", (socket) => {
         console.log("Client disconnected");
     });
 });
-
-
-
-
-
