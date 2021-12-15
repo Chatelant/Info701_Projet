@@ -4,6 +4,7 @@
 - [3. Fonctionnement de l'app](#3-fonctionnement-de-lapp)
 - [4. Installation](#4-installation)
 - [5. Diffucultés rencontrées](#5-diffucultés-rencontrées)
+- [6. Pistes d'amélioration](#6-pistes-d'amélioration)
 
 # Info701_Projet
 
@@ -57,3 +58,9 @@ Cloner le repo
  - Gestion de plusieurs groupes de joueurs en parallèle par le serveur:  
     Créer des "room" socket io pour chaque duo de joueurs.  
     A cause de soucis de déconnexions de socket je n'ai pas réussi à l'implémenter de façon convenable, j'ai donc opté pour quelque chose de fonctionnel avec seulement deux    joueurs.
+
+# 6. Pistes d'amélioration
+
+ - Ajout de nouveau modules possibles
+ - Affichage des modules non obligatoires de façon aléatoire
+ 
