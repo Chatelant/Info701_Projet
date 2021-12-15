@@ -47,13 +47,13 @@ Cloner le repo
 
 # 5. Diffucultés rencontrées
 
- - Ajout du vocal : 
-    WebRtc dispo mais toujours sur la techno React ~ Navigateur, d'autres moyens disponnibles mais avec adhésion à des abonnements.
+ - Ajout du vocal :   
+    WebRtc dispo mais toujours sur la techno React ~ Navigateur, d'autres moyens disponnibles mais avec adhésion à des abonnements.  
     Essaie de mise en place à la main avec socket.io n'a rien donné de très concluant.
  
- - Construire un affichage satisfaisant :
+ - Construire un affichage satisfaisant :  
     Ici c'est une preuve de concept ce n'est pas très important, mais le mieux pour un bon affichage serait une implémentation en natif (pour de la 3D aussi par exemple).
 
- - Gestion de plusieurs groupes de joueurs en parallèle par le serveur:
-    Créer des "room" socket io pour chaque duo de joueurs.
+ - Gestion de plusieurs groupes de joueurs en parallèle par le serveur:  
+    Créer des "room" socket io pour chaque duo de joueurs.  
     A cause de soucis de déconnexions de socket je n'ai pas réussi à l'implémenter de façon convenable, j'ai donc opté pour quelque chose de fonctionnel avec seulement deux    joueurs.
