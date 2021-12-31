@@ -8,6 +8,7 @@ import Bombe from "./component/Bombe";
 import Connection from "./component/Connection";
 import Home from "./component/Home";
 import RoleSelection from "./component/RoleSelection";
+import Victoire from "./component/Victoire";
 import informatorLayout from "./component/informator/informatorLayout"
 import informatorWireLayout from "./component/informator/informatorWireLayout"
 import informatorDesamorcage from "./component/informator/informatorDesamorcage"
@@ -34,6 +35,7 @@ export default function App() {
                 {/* Navigation entre les menus */}
                 <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="RoleSelection" component={RoleSelection} options={{ headerShown: false }} />
+                <Stack.Screen name="Victoire" component={Victoire} options={{ headerShown: false }} />
                 <Stack.Screen name="Lobby" component={Connection} options={{ headerShown: false }} />
                 <Stack.Screen name="Bombe" component={Bombe} options={{ headerShown: false }} />
                 {/* Coté informateur */}

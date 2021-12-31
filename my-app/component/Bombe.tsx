@@ -8,10 +8,11 @@ import KeyPad from "./BombModules/Keypad";
 import SerialNumber from "./BombModules/SerialNumber";
 import Word from "./BombModules/Word";
 
+import { socket } from "./Connection";
+
 /// Contient le jeu et affiche les modules.
 /// Les modules intéragissent avec le jeu pour indiquer si ils ont été correctement validé (answer)
 /// Dans le cas contraire, ils préviennent le jeu d'une erreur, ce dernier incrémente le nombre d'erreurs (incrWrongAnswer)
-
 class Bombe extends Component {
     private wrongAnswerAllowed = 3; // Nombre d'erreurs max alloués à l'utilisateurs
 
@@ -42,6 +43,7 @@ class Bombe extends Component {
             this.state.modules['M5'] === true &&
             this.state.modules['M6'] === true) {
             ToastAndroid.show("Victoire ! ", ToastAndroid.LONG);
+            socket.emit("game_victory");
         }
         if (this.state.wrongAnswer >= this.wrongAnswerAllowed) {
             ToastAndroid.show("Defaite !", ToastAndroid.SHORT);
@@ -70,7 +72,6 @@ class Bombe extends Component {
     }
 
     render() {
-
         return (
             // Affichage des 6 modules
             <View style={{ flexDirection: "column", width: width, height: height, justifyContent: "center", }}>

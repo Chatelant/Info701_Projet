@@ -13,8 +13,9 @@ let socketId: string;
 
 const Connection = ({ navigation, route }) => {
     // Root
-    socket = io('http://192.168.1.20:3000');            // Maison fixe
+    // socket = io('http://192.168.1.20:3000');            // Maison fixe
     // const socket = io('http://192.168.1.15:3000');   // Maison portable
+    socket = io('http://192.168.1.50:3000');   // Cannelle
 
     // Connection
     socket.on("connect", () => {
@@ -36,6 +37,11 @@ const Connection = ({ navigation, route }) => {
     socket.on("disconnect", () => {
         console.log("Disconnect");
         ToastAndroid.show("Reconnexion...", ToastAndroid.SHORT)
+    });
+
+    socket.on("game_victory_rcv", () => {
+        navigation.navigate("Victoire");
+        console.log("Victoire");
     });
 
     // Fonction retournant la route associée à l'écran de jeu correspondant au role selectioné
@@ -62,8 +68,9 @@ const Connection = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
             <Text style={[styles.pressedText, { textAlign: 'center' }]}>MatchMaking{"\n"}Recherche de joueur</Text>
-            <Pressable onPress={() => navigation.navigate(jouerOrConnexion())} style={styles.pressed}><Text style={styles.pressedText}>Afficher jeu</Text></Pressable>
+            <Pressable onPress={() => navigation.navigate(jouerOrConnexion(), { socket: socket })} style={styles.pressed}><Text style={styles.pressedText}>Afficher jeu</Text></Pressable>
         </View>
     );
 }
 export default Connection;
+export { socket };

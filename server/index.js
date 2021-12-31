@@ -34,6 +34,12 @@ io.on("connection", (socket) => {
         debutPartie();
     })
 
+    socket.on("game_victory", () => {
+        io.emit("game_victory_rcv");
+        desamorceur = null;
+        informateur = null;
+    })
+
     function debutPartie() {
         if (desamorceur != undefined && informateur != undefined) {
             io.emit("debutPartie");
