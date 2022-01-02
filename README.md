@@ -48,9 +48,15 @@ Cloner le repo
 
 # 5. Diffucultés rencontrées
 
- - Ajout du vocal :   
+ - Ajout du vocal :
+    Il y a quelques solutions de conversations audio/video entre navigateurs (avec React) mais beaucoup moins avec React-native.
     WebRtc dispo mais toujours sur la techno React ~ Navigateur, d'autres moyens disponnibles mais avec adhésion à des abonnements.  
     Essaie de mise en place à la main avec socket.io n'a rien donné de très concluant.
+    
+    Sources :
+    - Vocal main avec socket (enregistrement de la voix a des intervalles réguliers court) https://github.com/react-native-voice/voice
+      En utilisant un hook de React-native (comme le compteur que l'on utilise pour la bombe mais avec un intervalle plus court), envoie de la séquence enregistré à la socket distante.
+    - 
  
  - Construire un affichage satisfaisant :  
     Ici c'est une preuve de concept ce n'est pas très important, mais le mieux pour un bon affichage serait une implémentation en natif (pour de la 3D aussi par exemple).
